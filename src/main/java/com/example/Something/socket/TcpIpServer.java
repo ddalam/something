@@ -10,6 +10,12 @@ import java.util.Date;
 
 public class TcpIpServer {
 
+    private int number;
+
+    public int getNumber() {
+        return number;
+    }
+
     public static void main(String[] args) {
         ServerSocket serverSocket = null;
 
