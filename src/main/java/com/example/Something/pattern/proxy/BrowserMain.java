@@ -1,5 +1,7 @@
 package com.example.Something.pattern.proxy;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class BrowserMain {
 
     public static void main(String[] args) {
@@ -19,5 +21,25 @@ public class BrowserMain {
         browser.show();
         browser.show();
 
+        // Spring AOP와 같은 역할을 하는 기능을 구현
+        AtomicLong start = new AtomicLong();
+        AtomicLong end = new AtomicLong();
+
+        Browser aopBrowser = new AopBrowser("www.naver.com",
+                () -> {
+                    System.out.println("befor");
+                    start.set(System.currentTimeMillis());
+                },
+                () -> {
+                    long now = System.currentTimeMillis();
+                    end.set(now - start.get());
+                }
+        );
+
+        aopBrowser.show();
+        System.out.println("loading time : " + end.get());
+
+        aopBrowser.show();
+        System.out.println("loading time : " + end.get());
     }
 }
