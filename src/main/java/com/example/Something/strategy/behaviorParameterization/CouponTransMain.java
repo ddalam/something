@@ -15,5 +15,8 @@ public class CouponTransMain {
 				System.out.println("알림톡으로 쿠폰 발송");
 			}
 		});
+
+		// 람다 표현식을 사용해 동적 파라미터화 코드 전달하기
+		Coupon.sendCoupon(coupon, (Coupon targetCoupon) -> System.out.println("앱으로 쿠폰 발송"));
 	}
 }
