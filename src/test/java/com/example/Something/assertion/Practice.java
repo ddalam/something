@@ -24,4 +24,9 @@ public class Practice {
         // 콘텐츠의 동등성을 비교하려면 isEqualToComparingFieldByFieldRecursively()를 사용
         assertThat(fido).isEqualToComparingFieldByFieldRecursively(fidosClone);
     }
+
+    @Test
+    void assertBoolean() {
+        assertThat("".isEmpty()).isTrue();
+    }
 }
