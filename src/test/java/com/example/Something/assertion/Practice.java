@@ -60,4 +60,15 @@ public class Practice {
                 .doesNotContainNull()
                 .containsSequence("2", "3"); // 실제 그룹이 시퀀스 값 사이에 추가 값없이 순서대로 지정된 시퀀스를 포함하는지 확인
     }
+
+    @Test
+    void assertCharacter() {
+        char someCharacter = 'c';
+
+        assertThat(someCharacter)
+                .isNotEqualTo('a')
+                .inUnicode()
+                .isGreaterThanOrEqualTo('b')
+                .isLowerCase();
+    }
 }
