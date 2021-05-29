@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 // Assertion은 아래 import문을 통해
 import static org.assertj.core.api.Assertions.*;
@@ -71,5 +72,14 @@ public class Practice {
                 .inUnicode()
                 .isGreaterThanOrEqualTo('b')
                 .isLowerCase();
+    }
+
+    @Test
+    void assertClass() {
+        // Runnable 클래스가 인터페이스인지 확인
+        assertThat(Runnable.class).isInterface();
+
+        // NoSuchElementException 타입을 Exception 타입에 할당 가능한지 확인
+        assertThat(Exception.class).isAssignableFrom(NoSuchElementException.class);
     }
 }
