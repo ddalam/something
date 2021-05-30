@@ -9,9 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 // Assertion은 아래 import문을 통해
 import static org.assertj.core.api.Assertions.*;
@@ -113,5 +111,17 @@ public class Practice {
         ByteArrayInputStream expectedInputStream = new ByteArrayInputStream(expected);
 
         assertThat(actualInputStream).hasSameContentAs(expectedInputStream);
+    }
+
+    @Test
+    void assertMap() {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(2, "a");
+
+        assertThat(map)
+                .isNotEmpty()
+                .containsKey(2)
+                .doesNotContainKeys(10)
+                .contains(entry(2, "a"));
     }
 }
