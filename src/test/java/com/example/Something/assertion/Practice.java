@@ -94,4 +94,12 @@ public class Practice {
                 .canRead()
                 .canWrite();
     }
+
+    @Test
+    void assertNumeric() {
+        // withPrecision에 주어진 offset 내의 숫자 값을 비교
+        // 주어진 정밀도에 따라 두 값이 같은지 확인
+        assertThat(5.1).isEqualTo(5.1, withPrecision(2d));
+        assertThat(5.1).isEqualTo(5, withPrecision(1d));
+    }
 }
