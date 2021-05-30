@@ -7,6 +7,7 @@ package com.example.Something.assertion;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
@@ -101,5 +102,16 @@ public class Practice {
         // 주어진 정밀도에 따라 두 값이 같은지 확인
         assertThat(5.1).isEqualTo(5.1, withPrecision(2d));
         assertThat(5.1).isEqualTo(5, withPrecision(1d));
+    }
+
+    @Test
+    void assertInputStream() {
+        // InputSteam의 내용이 주어진 내용과 동일한지 확인
+        byte[] actual = new byte[]{1, 2};
+        byte[] expected = new byte[]{1, 2};
+        ByteArrayInputStream actualInputStream = new ByteArrayInputStream(actual);
+        ByteArrayInputStream expectedInputStream = new ByteArrayInputStream(expected);
+
+        assertThat(actualInputStream).hasSameContentAs(expectedInputStream);
     }
 }
