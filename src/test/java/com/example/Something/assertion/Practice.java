@@ -7,6 +7,7 @@ package com.example.Something.assertion;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -81,5 +82,16 @@ public class Practice {
 
         // NoSuchElementException 타입을 Exception 타입에 할당 가능한지 확인
         assertThat(Exception.class).isAssignableFrom(NoSuchElementException.class);
+    }
+
+    @Test
+    void assertFile() {
+        // 파일이 존재하는지, 디렉토리가 아닌 파일인지, 읽고 쓸 수 있는지 확인
+        File someFile = new File("/Users/dayoungchoi/Documents/study/Something/src/main/java/com/example/Something/assertion/Dog.java");
+        assertThat(someFile)
+                .exists()
+                .isFile()
+                .canRead()
+                .canWrite();
     }
 }
