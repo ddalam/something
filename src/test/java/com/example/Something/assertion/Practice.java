@@ -124,4 +124,12 @@ public class Practice {
                 .doesNotContainKeys(10)
                 .contains(entry(2, "a"));
     }
+
+    @Test
+    void assertThrowable() {
+        Exception ex = new Exception("abc");
+
+        // 예외가 발생했는지 확인하고, "c"로 끝나는 메시지가 있는지 확인
+        assertThat(ex).hasNoCause().hasMessageEndingWith("c");
+    }
 }
