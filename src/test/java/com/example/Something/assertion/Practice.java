@@ -1,6 +1,9 @@
 /**
- * 코드 출처 : Introduction to AssertJ
+ * 코드 출처
+ * 1. Introduction to AssertJ
  * https://www.baeldung.com/introduction-to-assertj
+ * 2. AssertJ Document
+ * https://joel-costigliola.github.io/assertj/index.html
  */
 
 package com.example.Something.assertion;
@@ -131,6 +134,14 @@ public class Practice {
 
         // 예외가 발생했는지 확인하고, "c"로 끝나는 메시지가 있는지 확인
         assertThat(ex).hasNoCause().hasMessageEndingWith("c");
+    }
+
+    @Test
+    void assertThrowableUsingAssertThatThrownBy() {
+        // Java 8
+        // assertThatThrownBy(ThrowingCallable)로 Throwable을 캡쳐, ThrowingCallable는 람다로 표현할 수 있는 함수형 인터페이스
+        assertThatThrownBy(() -> { throw new Exception("boom!"); }).isInstanceOf(Exception.class)
+                                                             .hasMessageContaining("boom");
     }
 
     @Test
