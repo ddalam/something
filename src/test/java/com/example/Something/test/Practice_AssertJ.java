@@ -6,7 +6,7 @@
  * https://joel-costigliola.github.io/assertj/index.html
  */
 
-package com.example.Something.assertion;
+package com.example.Something.test;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,7 @@ import java.util.*;
 // Assertion은 아래 import문을 통해
 import static org.assertj.core.api.Assertions.*;
 
-public class Practice {
+public class Practice_AssertJ {
 
     @Test
     void test() {

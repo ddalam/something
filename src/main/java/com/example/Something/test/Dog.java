@@ -1,4 +1,4 @@
-package com.example.Something.assertion;
+package com.example.Something.test;
 
 public class Dog {
     private String name;
