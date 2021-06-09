@@ -23,4 +23,14 @@ public class UndirectedGraphMatrixMatrix implements GraphMatrix {
         graph[start][end] = 1;
         graph[end][start] = 1;
     }
+
+    public int calcDegree(int vertex) {
+        int degree = 0;
+
+        for (int i = 0; i < size; i++) {
+            degree += graph[vertex][i];
+        }
+
+        return degree;
+    }
 }
