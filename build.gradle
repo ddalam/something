@@ -19,6 +19,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testCompile("org.junit.jupiter:junit-jupiter-params:5.7.0")
 }
 
 test {
