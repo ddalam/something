@@ -1,4 +1,4 @@
-package com.example.Something.login.domain.web.login;
+package com.example.Something.login.web.login;
 
 import lombok.Data;
 
