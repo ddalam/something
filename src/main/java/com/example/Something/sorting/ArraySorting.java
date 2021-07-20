@@ -1,5 +1,7 @@
 package com.example.Something.sorting;
 
+import com.example.Something.test.Dog;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -74,5 +76,10 @@ public class ArraySorting {
 
     public String[] sortStringArrayWithStreamLambdaDesc(String[] stringArray) {
         return Stream.of(stringArray).sorted((o1,o2) -> o2.compareTo(o1)).toArray(String[]::new);
+    }
+
+    public Dog[] sortObjectArrayWithArraysAsc(Dog[] dogs) {
+        Arrays.sort(dogs);
+        return dogs;
     }
 }

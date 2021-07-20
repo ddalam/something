@@ -1,5 +1,6 @@
 package com.example.Something.sorting;
 
+import com.example.Something.test.Dog;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -131,12 +132,33 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Stream과 Lambda를 사용한 String 배열 내림차순 정렬")
-    void testStringArrayWitStreamLambdaDescSorting() {
+    void testStringArrayWithStreamLambdaDescSorting() {
         ArraySorting arraySorting = new ArraySorting();
 
         String[] expected = {"orange", "melon", "banana", "apple"};
         String[] actual = arraySorting.sortStringArrayWithStreamLambdaDesc(new String[] {"apple", "orange", "banana", "melon"});
 
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("클래스에 Comparable의 compareTo를 구현해 필드 값으로 오름차순 정렬")
+    void testObjectArrayWithArraysAscSorting() {
+        ArraySorting arraySorting = new ArraySorting();
+
+        Dog[] expected = {
+                new Dog("Bdog", 11.9F),
+                new Dog("Adog", 20.3F),
+                new Dog("Cdog", 99F)
+        };
+        Dog[] actual = arraySorting.sortObjectArrayWithArraysAsc(new Dog[] {
+                                                                            new Dog("Bdog", 11.9F),
+                                                                            new Dog("Cdog", 99F),
+                                                                            new Dog("Adog", 20.3F)
+                                                                    });
+
+        assertEquals(expected[0].getWeight(), actual[0].getWeight());
+        assertEquals(expected[1].getWeight(), actual[1].getWeight());
+        assertEquals(expected[2].getWeight(), actual[2].getWeight());
     }
 }
