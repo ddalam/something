@@ -38,6 +38,13 @@ public class ArraySorting {
         return Arrays.stream(arr).mapToInt(i -> i).toArray();
     }
 
+    public int[] sortIntArrayWithArraysDesc(int[] intArray, int startIndex, int endIndex) {
+        Integer[] arr = Arrays.stream(intArray).boxed().toArray(Integer[]::new);
+        // Collections.reverseOrder() or Comparator.reverseOrder()
+        Arrays.sort(arr, startIndex, endIndex, Collections.reverseOrder());
+        return Arrays.stream(arr).mapToInt(i -> i).toArray();
+    }
+
     public int[] sortIntArrayWithStreamDesc(int[] intArray) {
         Integer[] arr = Arrays.stream(intArray).boxed().toArray(Integer[]::new);
         Integer[] sortedArr = Stream.of(arr).sorted(Comparator.reverseOrder()).toArray(Integer[]::new);

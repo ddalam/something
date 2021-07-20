@@ -54,6 +54,17 @@ class ArraySortingTest {
     }
 
     @Test
+    @DisplayName("Arrays를 사용한 int 배열 내림차순 정렬")
+    void testIntArrayPartWithArraysDescSorting() {
+        ArraySorting arraySorting = new ArraySorting();
+
+        int[] expected = {19, 4, 1, 20, 99, 6};
+        int[] actual = arraySorting.sortIntArrayWithArraysDesc(new int[] {4, 19, 1, 20, 99, 6}, 0, 3);
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
     @DisplayName("Stream과 Lambda를 사용한 int 배열 오름차순 정렬")
     void testIntArrayPartWithStreamLambdaAscSorting() {
         ArraySorting arraySorting = new ArraySorting();
