@@ -1,10 +1,10 @@
 package com.example.Something.test;
 
-public class Dog implements Comparable<Dog> {
+public class Dog2 {
     private String name;
     private Float weight;
 
-    public Dog(String name, Float weight) {
+    public Dog2(String name, Float weight) {
         this.name = name;
         this.weight = weight;
     }
@@ -23,12 +23,5 @@ public class Dog implements Comparable<Dog> {
 
     public void setWeight(Float weight) {
         this.weight = weight;
-    }
-
-    @Override
-    public int compareTo(Dog o) {
-
-        // this와 같으면 0, this가 크면 양수, this가 작으면 음수 반환
-        return this.weight.compareTo(o.getWeight());
     }
 }
