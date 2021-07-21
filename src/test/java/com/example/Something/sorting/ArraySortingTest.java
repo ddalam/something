@@ -10,7 +10,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Arrays를 사용한 int 배열 오름차순 정렬")
-    void testIntArrayWithArraysAscSorting() {
+    void testIntArrayAscSortingWithArrays() {
         ArraySorting arraySorting = new ArraySorting();
 
         int[] expected = {1, 4, 6, 19, 20, 99};
@@ -21,7 +21,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Arrays를 사용한 int 배열 일부분 오름차순 정렬")
-    void testIntArrayPartWithArraysAscSorting() {
+    void testIntArrayPartAscSortingWithArrays() {
         ArraySorting arraySorting = new ArraySorting();
 
         int[] expected = {1, 4, 19, 20, 99, 6};
@@ -32,7 +32,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Arrays와 Lambda를 사용한 int 배열 오름차순 정렬")
-    void testIntArrayWithArraysLambdaAscSorting() {
+    void testIntArrayAscSortingWithArraysLambda() {
         ArraySorting arraySorting = new ArraySorting();
 
         int[] expected = {1, 4, 6, 19, 20, 99};
@@ -44,7 +44,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Arrays를 사용한 int 배열 내림차순 정렬")
-    void testIntArrayWithArraysDescSorting() {
+    void testIntArrayDescSortingWithArrays() {
         ArraySorting arraySorting = new ArraySorting();
 
         int[] expected = {99, 20, 19, 6, 4, 1};
@@ -55,7 +55,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Arrays를 사용한 int 배열 내림차순 정렬")
-    void testIntArrayPartWithArraysDescSorting() {
+    void testIntArrayPartDescSortingWithArrays() {
         ArraySorting arraySorting = new ArraySorting();
 
         int[] expected = {19, 4, 1, 20, 99, 6};
@@ -66,7 +66,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Stream과 Lambda를 사용한 int 배열 오름차순 정렬")
-    void testIntArrayPartWithStreamLambdaAscSorting() {
+    void testIntArrayPartAscSortingWithStreamLambda() {
         ArraySorting arraySorting = new ArraySorting();
 
         int[] expected = {1, 4, 6, 19, 20, 99};
@@ -77,7 +77,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Stream을 사용한 int 배열 내림차순 정렬")
-    void testIntArrayWithStreamDescSorting() {
+    void testIntArrayDescSortingWithStream() {
         ArraySorting arraySorting = new ArraySorting();
 
         int[] expected = {99, 20, 19, 6, 4, 1};
@@ -88,7 +88,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Arrays를 사용한 String 배열 오름차순 정렬")
-    void testStringArrayWithArraysAscSorting() {
+    void testStringArrayAscSortingWithArrays() {
         ArraySorting arraySorting = new ArraySorting();
 
         String[] expected = {"apple", "banana", "melon", "orange"};
@@ -99,7 +99,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Stream을 사용한 String 배열 오름차순 정렬")
-    void testStringArrayWitStreamAscSorting() {
+    void testStringArrayAscSortingWitStream() {
         ArraySorting arraySorting = new ArraySorting();
 
         String[] expected = {"apple", "banana", "melon", "orange"};
@@ -110,7 +110,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Lambda를 사용해 String 배열을 문자열 길이 오름차순으로 정렬")
-    void testStringArrayWitLambdaAscSorting() {
+    void testStringArrayAscSortingWitLambda() {
         ArraySorting arraySorting = new ArraySorting();
 
         String[] expected = {"melon", "banana", "apple333", "orange22"};
@@ -121,7 +121,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Arrays를 사용한 String 배열 내림차순 정렬")
-    void testStringArrayWithArraysDescSorting() {
+    void testStringArrayDescSortingWithArrays() {
         ArraySorting arraySorting = new ArraySorting();
 
         String[] expected = {"orange", "melon", "banana", "apple"};
@@ -132,7 +132,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Comparator를 사용한 String 배열 내림차순 정렬")
-    void testStringArrayWithComparatorDescSorting() {
+    void testStringArrayDescSortingWithComparator() {
         ArraySorting arraySorting = new ArraySorting();
 
         String[] expected = {"orange", "melon", "banana", "apple"};
@@ -143,7 +143,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("Stream과 Lambda를 사용한 String 배열 내림차순 정렬")
-    void testStringArrayWithStreamLambdaDescSorting() {
+    void testStringArrayDescSortingWithStreamLambda() {
         ArraySorting arraySorting = new ArraySorting();
 
         String[] expected = {"orange", "melon", "banana", "apple"};
@@ -154,7 +154,7 @@ class ArraySortingTest {
 
     @Test
     @DisplayName("클래스에 Comparable의 compareTo를 구현해 필드 값으로 오름차순 정렬")
-    void testObjectArrayWithArraysAscSorting() {
+    void testObjectArrayAscSortingWithArrays() {
         ArraySorting arraySorting = new ArraySorting();
 
         Dog[] expected = {
