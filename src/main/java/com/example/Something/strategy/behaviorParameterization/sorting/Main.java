@@ -15,9 +15,19 @@ public class Main{
             }
         })
 
+        // or
+        Comparator<Apple> byWeight = new Comparator<Apple>() {
+            public int compare(Apple a1, Apple a2) {
+                return a1.getWeight().compareTo(a2.getWeight());
+            }
+        };
+
         // 람다 표현식을 사용하면
         inventory.sort(
             (Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight())
         );
+
+        // or
+        Comparator<Apple> byWeight = (Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
     }
 }
