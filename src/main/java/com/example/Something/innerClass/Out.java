@@ -5,7 +5,7 @@ public class Out {
 	private int num = 10;
 	private static int sNum = 20;
 
-	// 보통 외부 클래스에 내부 클래스 타입의 변수를 선언한 뒤
+	// 보통 외부 클래스에 private으로 내부 클래스 타입의 변수를 선언한 뒤
 	// 생성자에서 in = new In(); 으로 내부 클래스를 생성해준다
 	private PrivateInstanceInner privateInstanceInner;
 
@@ -45,6 +45,26 @@ public class Out {
 			System.out.println("OutClass num = " + num + "(외부 클래스의 인스턴스 변수)");
 			System.out.println("OutClass sNum = " + sNum + "(외부 클래스의 스태틱 변수)");
 			System.out.println("InClass inNum = " + inNum + "(내부 클래스의 인스턴스 변수)");
+		}
+	}
+
+	static class StaticInner {
+		int inNum = 10;;
+		static int sInNum = 200;
+
+		void staticInnerTest() {
+			// 외부 클래스의 생성과 상관없이 만들어질 수 있는 내부 클래스이기 때문에 외부 클래스의 인스턴스 변수에 접근할 수 없다
+			// System.out.println("OutClass num = " + num + "(외부 클래스의 인스턴스 변수)");
+			System.out.println("OutClass sNum = " + sNum + "(외부 클래스의 스태틱 변수)");
+			System.out.println("InClass inNum = " + inNum + "(내부 클래스의 인스턴스 변수)");
+			System.out.println("InClass sInNum = " + sInNum + "(내부 클래스의 스태틱 변수)");
+		}
+
+		static void staticInnerStaticMethodTest() {
+			System.out.println("OutClass sNum = " + sNum + "(외부 클래스의 스태틱 변수)");
+			// static 메서드는 static 내부 클래스의 생성과 상관없이 호출될 수 있기 때문에 static 내부 클래스의 인스턴스 변수에 접근할 수 없다
+			// System.out.println("InClass inNum = " + inNum + "(내부 클래스의 인스턴스 변수)");
+			System.out.println("InClass sInNum = " + sInNum + "(내부 클래스의 스태틱 변수)");
 		}
 	}
 
