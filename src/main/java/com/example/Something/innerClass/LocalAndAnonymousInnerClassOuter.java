@@ -6,7 +6,7 @@ public class LocalAndAnonymousInnerClassOuter {
 	static int sNum = 200;
 
 	// 메서드의 매개변수는 stack 메모리에 생성
-	Runnable getRunnable(int i) {
+	Runnable getRunnableUsingLocalInnerClass(int i) {
 
 		// stack 메모리에 생성
 		int num = 10;
@@ -44,4 +44,38 @@ public class LocalAndAnonymousInnerClassOuter {
 
 		return new MyRunnable();
 	}
+
+	Runnable getRunnableUsingAnonymousInnerClass(int i) {
+
+		int num = 10;
+
+		// 익명 내부 클래스 : 클래스의 이름(MyRunnable 같은)을 쓸 일이 없기 때문에 클래스의 이름을 없애고 Runnable 인터페이스를 구현한 객체를 바로 리턴
+		return new Runnable() {
+
+			int localNum = 1000;
+
+			// 여전히 i, num을 변경하는 것은 불가능
+
+			@Override
+			public void run() {
+				System.out.println("i = " + i);
+				System.out.println("num = " + num);
+				System.out.println("localNum = " + localNum);
+
+				// 지역 내부 클래스는 외부 클래스가 생성된 다음 불리기 때문에 외부 클래스 인스턴스 변수에 접근 가능
+				System.out.println("outNum = " + outNum + "(외부 클래스 인스턴스 변수)");
+				System.out.println("LocalAndAnonymousInnerClassOuter.sNum = "
+						+ LocalAndAnonymousInnerClassOuter.sNum + "(외부 클래스 정적 변수)");
+			}
+		};
+	}
+
+	// 이런 사용도 가능
+	// 원래 Runnable을 구현한 어떤 클래스를 정의해야 하는데(내부 클래스) 이름 없이 정의했기 때문에 이것도 익명 내부 클래스
+	Runnable runnable = new Runnable() {
+		@Override
+		public void run() {
+			System.out.println("Runnable class");
+		}
+	};
 }
