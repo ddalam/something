@@ -1,6 +1,6 @@
 package com.example.Something.innerClass;
 
-public class Out {
+public class InstanceAndStaticInnerClassOuter {
 
 	private int num = 10;
 	private static int sNum = 20;
@@ -9,7 +9,7 @@ public class Out {
 	// 생성자에서 in = new In(); 으로 내부 클래스를 생성해준다
 	private PrivateInstanceInner privateInstanceInner;
 
-	public Out() {
+	public InstanceAndStaticInnerClassOuter() {
 		privateInstanceInner = new PrivateInstanceInner();
 	}
 

@@ -22,9 +22,9 @@ bin/
 *.iws
 *.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+instanceAndStaticInnerClassOuter/
+!**/src/main/**/instanceAndStaticInnerClassOuter/
+!**/src/test/**/instanceAndStaticInnerClassOuter/
 
 ### NetBeans ###
 /nbproject/private/
