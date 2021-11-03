@@ -13,10 +13,10 @@ class OutTest {
 	}
 
 	@Test
-	void defaultInClassTest() {
+	void defaultInstanceInnerClassTest() {
 		Out out = new Out();
-		Out.In2 in = out.new In2();
-		in.inTest();
+		Out.DefaultInstanceInner defaultInstanceInner = out.new DefaultInstanceInner();
+		defaultInstanceInner.defaultInstanceInnerTest();
 	}
 
 }
