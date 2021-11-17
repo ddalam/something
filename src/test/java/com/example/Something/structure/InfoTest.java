@@ -21,12 +21,12 @@ class InfoTest {
 
 	RestTemplate client = new RestTemplate();
 
-	@DisplayName("상속 관계에 있는 클래스를 return 했을 때 결과가 어떤 응답인지")
+	@DisplayName("상속 관계에 있는 클래스를 return 했을 때 결과가 어떤지")
 	@Test
 	void test() {
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity entity = new HttpEntity(null, headers);
-		ResponseEntity<Info> resp = client.exchange("http://localhost:8080/api/info", HttpMethod.GET, entity, Info.class);
+		ResponseEntity<String> resp = client.exchange("http://localhost:" + port + "/api/info", HttpMethod.GET, entity, String.class);
 
 		System.out.println(resp.getBody());
 //		assertEquals("hello", resp.getBody());
