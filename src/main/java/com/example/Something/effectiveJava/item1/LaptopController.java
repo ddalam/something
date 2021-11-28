@@ -1,4 +1,4 @@
-package com.example.Something.staticFactoryMethod;
+package com.example.Something.effectiveJava.item1;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
