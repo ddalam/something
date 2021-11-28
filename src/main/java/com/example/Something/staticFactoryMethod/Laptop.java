@@ -25,7 +25,7 @@ public class Laptop {
 	public static Laptop ofModelNameAndCompany(String modelName, String companyName) {
 		Laptop laptop = new Laptop();
 		laptop.modelName = modelName;
-		laptop.company = companyName;
+		laptop.companyName = companyName;
 		return laptop;
 	}
 }
