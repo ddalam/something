@@ -17,3 +17,5 @@
 #  # org.hibernate.type: trace
 server:
   port: 9797
+
+my.height: 170
