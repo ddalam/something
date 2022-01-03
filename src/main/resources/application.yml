@@ -19,3 +19,14 @@ server:
   port: 9797
 
 my.height: 170
+
+spring:
+  config:
+    import: vault://
+  application:
+    name: something
+  cloud:
+    vault:
+      scheme: http
+      authentication: token
+      token: tokentokentoken
