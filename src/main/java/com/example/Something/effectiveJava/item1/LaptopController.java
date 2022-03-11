@@ -15,5 +15,6 @@ public class LaptopController {
 		// from이나 of를 사용해야될 것 같은 경우는 예를 들어 제조사 type 파라미터 값에 따라 다른 제조사 정보를 가지는 Laptop 인스턴스를 만들어주는
 		Laptop laptop = Laptop.from(laptopFrom);
 
+		return null;
 	}
 }
