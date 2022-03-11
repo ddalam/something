@@ -36,7 +36,7 @@ public class RestApiController {
 
     @Decode
     @PutMapping("/put")
-    public User post(@RequestBody User user) {
+    public User put(@RequestBody User user) {
 
         return user;
     }
