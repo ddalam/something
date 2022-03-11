@@ -34,5 +34,12 @@ class StudyServiceTest {
 		assertNotNull(studyService);
 	}
 
+	// 특정 메서드에서 @Mock 애노테이션으로 mock 객체를 사용하고 싶을 때는 파라미터로 전달할 수 있다
+	@Test
+	void createStudy_3(@Mock StudyRepository studentRepository) {
+		StudyService studyService = new StudyService(studentRepository);
+
+		assertNotNull(studyService);
+	}
 
 }
