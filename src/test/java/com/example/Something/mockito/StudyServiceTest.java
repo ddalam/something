@@ -4,7 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+@ExtendWith(MockitoExtension.class)
 class StudyServiceTest {
 
 	@Test
@@ -18,5 +22,17 @@ class StudyServiceTest {
 
 		assertNotNull(studyService);
 	}
+
+	// 여러 메서드에서 mock 객체를 사용하고 싶을 때
+	@Mock
+	StudyRepository studentRepository;
+
+	@Test
+	void createStudy_2() {
+		StudyService studyService = new StudyService(studentRepository);
+
+		assertNotNull(studyService);
+	}
+
 
 }
