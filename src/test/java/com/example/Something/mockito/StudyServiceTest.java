@@ -3,6 +3,7 @@ package com.example.Something.mockito;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -38,6 +39,20 @@ class StudyServiceTest {
 	@Test
 	void createStudy_3(@Mock StudyRepository studentRepository) {
 		StudyService studyService = new StudyService(studentRepository);
+
+		assertNotNull(studyService);
+	}
+
+	@Test
+	void createStudy_4(@Mock StudyRepository studentRepository) {
+		StudyService studyService = new StudyService(studentRepository);
+
+		// Optional 타입은 Optional.empty 리턴
+		Optional<Study> optionalStudy = studyService.findStudy(1L);
+		assertEquals(optionalStudy, Optional.empty());
+
+		// void 메서드는 아무런 일도 일어나지 않는다
+		studyService.validate(1L);
 
 		assertNotNull(studyService);
 	}
