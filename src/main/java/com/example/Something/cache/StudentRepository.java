@@ -12,7 +12,7 @@ public class StudentRepository {
 	private final Map<String, Student> storage;
 
 	// 만약 여기가 병목이 일어나는 곳이라면
-	@Cacheable("student")
+//	@Cacheable("student")
 	public Student getStudent(String name) {
 		System.out.println("[repo] 나의 통행료는 무척 비싸다!");
 		return storage.get(name);
