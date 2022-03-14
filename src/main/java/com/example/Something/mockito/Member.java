@@ -5,12 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Study {
+public class Member {
 
 	private Long id;
 
 	private String name;
-
-	private Member owner;
 
 }

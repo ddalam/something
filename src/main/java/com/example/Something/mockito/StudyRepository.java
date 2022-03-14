@@ -8,4 +8,6 @@ public interface StudyRepository {
 
 	void validate(Long id);
 
+	Study save(Study study);
+
 }
