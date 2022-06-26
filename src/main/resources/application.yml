@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #spring:
 #  datasource:
 #    url: jdbc:h2:tcp://localhost/~/something
@@ -15,18 +14,22 @@
 #logging.level:
 #  org.hibernate.SQL: debug
 #  # org.hibernate.type: trace
-server:
-  port: 9797
+#server:
+#  port: 9797
+#
+#my.height: 170
+#
+#spring:
+#  config:
+#    import: vault://
+#  application:
+#    name: something
+#  cloud:
+#    vault:
+#      scheme: http
+#      authentication: token
+#      token: tokentokentoken
 
-my.height: 170
-
-spring:
-  config:
-    import: vault://
-  application:
-    name: something
-  cloud:
-    vault:
-      scheme: http
-      authentication: token
-      token: tokentokentoken
+logging:
+  level:
+    org.springframework.transaction.interceptor: trace
