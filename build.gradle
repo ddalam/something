@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'junit:junit:4.12'
 	implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+	implementation 'org.apache.commons:commons-lang3'
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
@@ -27,7 +28,6 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testCompile("org.junit.jupiter:junit-jupiter-params:5.7.0")
-
 	//테스트에서 Lombok 사용
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
